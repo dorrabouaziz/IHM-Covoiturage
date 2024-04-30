@@ -1,0 +1,32 @@
+.fieldnpm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+input {
+  margin-top: 5px;
+}
+/* styles.scss */
+
+/* styles.scss */
+
+.login-container {
+  display: flex; /* Arrange elements side-by-side */
+  gap: 2rem; /* Add space between form and image */
+  
+}
+
+.login-container img {
+  width: 400px;
+   /* Adjust image width as needed */
+  flex: 0 0 auto; /* Allow form to grow and wrap */
+  order: 1; /* Move image to the right */
+}
+
+.login-container form {
+  flex: 1; /* Make form take up remaining space */
+  order: 0; /* Move form to the left */
+}
+
+

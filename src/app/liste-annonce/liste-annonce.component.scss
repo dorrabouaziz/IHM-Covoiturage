@@ -1,0 +1,115 @@
+.multi-search-bar-container {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .search-bar {
+    margin: 0 10px;
+  }
+  .outofstock {
+    font-weight: 700;
+    color: #ff5252;}
+  .instock {
+    font-weight: 700;
+    color: #66bb6a;}
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px; /* Adjust width as needed */
+  }
+  
+  button {
+    margin: 0 10px;
+    padding: 10px 30px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .multi-search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #EEECF2; // Gris transparent
+  
+    .search-bar, .spaced-search-bar {
+      flex: 1;
+      margin: 0 5px; // Diminuer l'espace entre les inputs
+  
+      input[type="text"] {
+        width: 100%; // Utiliser toute la largeur disponible
+      }
+    }
+  
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      &:hover {
+        background-color: #008CBA;
+        color: white;
+      }
+    }
+  }
+  
+  .card {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  
+    p-table {
+      width: 100%;
+  
+      th {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+      }
+  
+      td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+      }
+  
+      button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        &:hover {
+          background-color: #45a049;
+        }
+      }
+    }
+  }
+  .input-field {
+    height: 40px; /* Adjust as needed */
+  }
+  
+  

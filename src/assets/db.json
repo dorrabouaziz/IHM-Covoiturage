@@ -1,0 +1,230 @@
+{
+  "users": [
+    {
+      "id": "8996",
+      "fullName": "Karim Jalleli",
+      "email": "karimj@gmail.com",
+      "password": "12345678",
+      "city": "Sfax",
+      "phoneNumber": "598198298"
+    },
+    {
+      "id": "8da2",
+      "fullName": "habaib ahmed",
+      "email": "ahmedhabaib1@gmail.com",
+      "password": "123456",
+      "city": "sfax",
+      "phoneNumber": "25287750"
+    }
+  ],
+  "annoncesCovoiturage": [
+    {
+      "id": "7369",
+      "depart": "SFAX",
+      "destination": "TUNIS",
+      "date": "2024-04-12T23:00:00.000Z",
+      "heureDepart": "20:00",
+      "placesDisponibles": 0,
+      "conducteur": {
+        "nom": "AHMED",
+        "telephone": "26091862",
+        "vehicule": "BMW X5",
+        "prix": 25,
+        "climatisation": "oui",
+        "bagage": "always",
+        "fumeur": "oui",
+        "sexe": "homme"
+      },
+      "passagers": [
+        {
+          "nom": "John Doe",
+          "telephone": "123-456-7890",
+          "sexe": "Male"
+        }
+      ]
+    },
+    {
+      "id": "6024",
+      "depart": "SFAX",
+      "destination": "TUNIS",
+      "date": "2024-04-12T23:00:00.000Z",
+      "heureDepart": "14:00",
+      "placesDisponibles": 0,
+      "conducteur": {
+        "nom": "AHMED",
+        "telephone": "26091862",
+        "vehicule": "BMW X5",
+        "prix": 20,
+        "climatisation": "non",
+        "bagage": "auto",
+        "fumeur": "non",
+        "sexe": "Peu importe"
+      },
+      "passagers": [
+        {
+          "nom": "John Doe",
+          "telephone": "123-456-7890",
+          "sexe": "Male"
+        }
+      ]
+    },
+    {
+      "id": "8277",
+      "depart": "SFAX",
+      "destination": "TUNIS",
+      "date": "2024-04-12T23:00:00.000Z",
+      "heureDepart": "03:00",
+      "placesDisponibles": 1,
+      "conducteur": {
+        "nom": "AHMED",
+        "telephone": "26091862",
+        "vehicule": "BMW X5",
+        "prix": 21,
+        "climatisation": "non",
+        "bagage": "always",
+        "fumeur": "non",
+        "sexe": "Peu importe"
+      },
+      "passagers": []
+    },
+    {
+      "id": "7612",
+      "depart": "SFAX",
+      "destination": "TUNIS",
+      "date": "2024-04-12T23:00:00.000Z",
+      "heureDepart": "20:00",
+      "placesDisponibles": 3,
+      "conducteur": {
+        "nom": "AHMED",
+        "telephone": "26091862",
+        "vehicule": "BMW X5",
+        "prix": 23,
+        "climatisation": "non",
+        "bagage": "auto",
+        "fumeur": "non",
+        "sexe": "femme"
+      },
+      "passagers": []
+    },
+    {
+      "id": "3691",
+      "depart": "SFAX",
+      "destination": "TUNIS",
+      "date": "2024-04-12T23:00:00.000Z",
+      "heureDepart": "20:00",
+      "placesDisponibles": 2,
+      "conducteur": {
+        "nom": "AHMED",
+        "telephone": "26091862",
+        "vehicule": "BMW X5",
+        "prix": 65,
+        "climatisation": "oui",
+        "bagage": "auto",
+        "fumeur": "non",
+        "sexe": "femme"
+      },
+      "passagers": [
+        {
+          "nom": "John Doe",
+          "telephone": "123-456-7890",
+          "sexe": "Male"
+        }
+      ]
+    },
+    {
+      "id": "4941",
+      "depart": "SFAX",
+      "destination": "TUNIS",
+      "date": "2024-04-12T23:00:00.000Z",
+      "heureDepart": "03:00",
+      "placesDisponibles": 3,
+      "conducteur": {
+        "nom": "AHMED",
+        "telephone": "26091862",
+        "vehicule": "BMW X5",
+        "prix": 50,
+        "climatisation": "non",
+        "bagage": "auto",
+        "fumeur": "non",
+        "sexe": "femme"
+      },
+      "passagers": []
+    },
+    {
+      "id": "3903",
+      "depart": "SFAX",
+      "destination": "TUNIS",
+      "date": "2024-04-12T23:00:00.000Z",
+      "heureDepart": "23:30",
+      "placesDisponibles": 3,
+      "conducteur": {
+        "nom": "AHMED",
+        "telephone": "26091862",
+        "vehicule": "BMW X5",
+        "prix": 202,
+        "climatisation": "non",
+        "bagage": "auto",
+        "fumeur": "non",
+        "sexe": "femme"
+      },
+      "passagers": []
+    },
+    {
+      "id": "262",
+      "depart": "SFAX",
+      "destination": "TUNIS",
+      "date": "2024-04-12T23:00:00.000Z",
+      "heureDepart": "20:00",
+      "placesDisponibles": 3,
+      "conducteur": {
+        "nom": "AHMED",
+        "telephone": "26091862",
+        "vehicule": "BMW X5",
+        "prix": 20,
+        "climatisation": "non",
+        "bagage": "always",
+        "fumeur": "non",
+        "sexe": "Peu importe"
+      },
+      "passagers": []
+    },
+    {
+      "id": "8209",
+      "depart": "sfax",
+      "destination": "tunis",
+      "date": "2024-04-07T23:00:00.000Z",
+      "heureDepart": "02:00",
+      "placesDisponibles": 3,
+      "conducteur": {
+        "nom": "RACEM ARIBI",
+        "telephone": "26091862",
+        "vehicule": "bmw",
+        "prix": 3,
+        "climatisation": "non",
+        "bagage": "auto",
+        "fumeur": "non",
+        "sexe": "homme"
+      },
+      "passagers": []
+    },
+    {
+      "id": "8760",
+      "depart": "GAFSA",
+      "destination": "BEJA",
+      "date": "2024-04-26T23:00:00.000Z",
+      "heureDepart": "14:00",
+      "placesDisponibles": 3,
+      "conducteur": {
+        "nom": "ahmed doudi",
+        "telephone": "26091862",
+        "vehicule": "PASSAT",
+        "prix": 60,
+        "climatisation": "oui",
+        "bagage": "always",
+        "fumeur": "oui",
+        "sexe": "Peu importe"
+      },
+      "passagers": []
+    }
+  ]
+}

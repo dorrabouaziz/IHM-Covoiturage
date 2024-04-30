@@ -1,0 +1,50 @@
+<!-- If user is not logged in -->
+<div *ngIf="!isLoggedIn" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-image: url(''); background-size: cover;">
+  <router-outlet></router-outlet>
+  <p-toast></p-toast>
+</div>
+
+<!-- If user is logged in -->
+<mat-sidenav-container *ngIf="isLoggedIn" class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" mode="side" opened>
+    <h1>Menu</h1>
+    <br><br><br><br>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/create">
+        <mat-icon>add_circle</mat-icon>
+        <span>Ajouter Annonce</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/liste-annonce">
+        <mat-icon>search</mat-icon>
+        <span>Rechercher Annonce</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/adminview">
+        <mat-icon>dashboard</mat-icon>
+        <span>Admin View</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/annonces">
+        <mat-icon>table_chart</mat-icon>
+        <span>Annonces</span>
+      </a>
+      <a mat-list-item (click)="logOut()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar>
+    <a href="#" (click)="sidenav.toggle(); $event.preventDefault()">
+      <mat-icon>menu</mat-icon>
+    </a>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

@@ -1,0 +1,32 @@
+.dialog-content {
+    background-color: #e7e7e7;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .dialog-content h1, .dialog-content h2 {
+    color: #0f488d;
+  }
+  .filtre {
+    width : 100%;
+    padding: 7px
+  }
+  .titre {
+      font-size: medium;
+      font-weight: bold;
+    }
+  .dialog-content p {
+    color: #242e31;
+  }
+  .button-container {
+    width: 110%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Espacement en haut des boutons */
+}
+
+.button-container p-button {
+    flex: 1; /* Pour répartir l'espace de manière égale entre les boutons */
+    margin-right: 10px; /* Espacement horizontal entre les boutons */
+}
+

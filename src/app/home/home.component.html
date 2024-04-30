@@ -1,0 +1,22 @@
+<img src="./assets/SLIDE.jpg" style="width: 100%; height: auto; object-fit: cover; z-index: 1; margin-top: 50px;">
+
+<div class="card-container flex justify-content-center">
+  <ng-container *ngFor="let annonce of annonces.slice(0, 4)">
+    <p-card
+      header="{{ annonce.depart }} -- {{ annonce.destination }}"
+      subheader="Annonce"
+      [style]="{ width: '320px', margin: '10px' }"
+    >
+      <ng-template pTemplate="header">
+        <img src="../assets/car2.jpg" />
+      </ng-template>
+      <p>{{ annonce.date | date:'yyyy-MM-dd ' }}</p>
+      <p>{{annonce.conducteur.prix}} DT</p>
+      <p>{{annonce.placesDisponibles}} places disponibles</p>
+      <ng-template pTemplate="footer">
+        <p-button label="Réserver" icon="pi pi-book" styleClass="p-button-success" routerLink="/login"></p-button>
+        <p-button label="Détails" icon="pi pi-plus" [style]="{ 'margin-left': '.5em' }"></p-button>
+      </ng-template>
+    </p-card>
+  </ng-container>
+</div>

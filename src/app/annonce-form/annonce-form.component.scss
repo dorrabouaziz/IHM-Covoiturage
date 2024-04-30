@@ -1,0 +1,100 @@
+h1 {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  
+  .example-form {
+    min-width: 300px;
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    flex: 1;
+  }
+  
+  .bouton-rouge {
+    margin-left: 10px;
+    background-color: rgb(202, 2, 2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  
+  }
+  
+  .bouton-rouge:hover {
+    background-color: rgb(98, 1, 1);
+  }
+  
+  .bouton-rouge i {
+    margin-left: 5px;
+  }
+  
+  .bouton-vert {
+    margin-left: 470px;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  
+  }
+  
+  .bouton-vert:hover {
+    background-color: rgb(1, 86, 1);
+  }
+  
+  .bouton-vert i {
+    margin-left: 5px;
+  }
+  
+  
+  form {
+    background-color: #EEECF2;
+    padding: 30px; /* Ajoute de l'espace à l'intérieur de la bordure pour améliorer l'apparence */
+    width: 800px; /* Vous pouvez ajuster la largeur du formulaire selon vos besoins */
+    margin: 0 auto; /* Centre le formulaire horizontalement sur la page */
+    border-radius: 15px; /* Ajoute des coins arrondis aux bords du formulaire */
+    height: 640px;
+  }
+  
+  .example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-container mat-form-field {
+    width: 220px;
+  }
+  
+  .example-container form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container form > * {
+    margin: 12px 0;
+  }
+  
+  .example-container .mat-radio-button {
+    margin: 0 12px;
+  }
+  
+  .example-form-fields {
+    display: flex;
+    align-items: flex-start;
+  }
+  label{
+    color: rgb(118, 106, 106);
+    font-size: larger;
+  }

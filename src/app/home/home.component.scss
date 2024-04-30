@@ -1,0 +1,15 @@
+.card-container {
+    display: flex; /* Make the container a flexbox */
+  }
+  
+  .card-container.flex-wrap {
+    flex-wrap: wrap; /* Wrap cards if they don't fit in a single row */
+  }
+  
+  p-card {
+    /* Adjust card width and margin as needed based on your design */
+    width: 320px;
+    margin: 10px;
+    margin-left: 40px;
+  }
+  
