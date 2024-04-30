@@ -1,10 +1,9 @@
-<!-- If user is not logged in -->
+<!--
 <div *ngIf="!isLoggedIn" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-image: url(''); background-size: cover;">
   <router-outlet></router-outlet>
   <p-toast></p-toast>
 </div>
 
-<!-- If user is logged in -->
 <mat-sidenav-container *ngIf="isLoggedIn" class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav" mode="side" opened>
     <h1>Menu</h1>
@@ -45,6 +44,9 @@
     <a href="#" (click)="sidenav.toggle(); $event.preventDefault()">
       <mat-icon>menu</mat-icon>
     </a>
-  </mat-toolbar>
-  <router-outlet></router-outlet>
-</mat-sidenav-container>
+  </mat-toolbar>-->
+ 
+  <div class="card">
+    <p-tabMenu [model]="items" [activeItem]="activeItem" (activeItemChange)="onActiveItemChange($event)"></p-tabMenu>
+</div>
+<router-outlet></router-outlet>

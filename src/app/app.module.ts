@@ -39,7 +39,7 @@ import {ButtonModule} from "primeng/button";
 import { TabMenuModule } from 'primeng/tabmenu';
 import { BadgeModule } from 'primeng/badge';
 
-
+import { FileUploadModule } from 'primeng/fileupload';
 
 
 
@@ -87,7 +87,8 @@ import { BadgeModule } from 'primeng/badge';
     InputTextModule,
     BrowserAnimationsModule,
     TabMenuModule,
-    BadgeModule
+    BadgeModule,
+    FileUploadModule
     
     
 
