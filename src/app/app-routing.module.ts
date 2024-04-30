@@ -10,6 +10,7 @@ import {RegisterComponent} from "./register/register.component";
 import {authGuard} from "./guards/auth.guard";
 
 
+
 const routes: Routes = [
   {
     path: 'login',
@@ -35,8 +36,9 @@ const routes: Routes = [
     path: 'liste-annonce',
     pathMatch: 'full',
     component:ListeAnnonceComponent,
-    canActivate: [authGuard]
+    
   },
+  
   {
     path: 'home',
     pathMatch: 'full',
@@ -51,13 +53,13 @@ const routes: Routes = [
     path: 'adminview',
     pathMatch: 'full',
     component:AdminviewComponent,
-    canActivate: [authGuard]
+    
   },
   {
     path: 'annonces',
     pathMatch: 'full',
     component:AnnoncesComponent,
-    canActivate: [authGuard]
+   
   },
   {
     path:'**',

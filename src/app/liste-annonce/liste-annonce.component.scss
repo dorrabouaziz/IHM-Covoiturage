@@ -4,6 +4,8 @@
     align-items: center;
     margin-bottom: 20px;
     padding-left: 20px;
+    
+    
   }
   
   .search-bar {
@@ -36,10 +38,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #EEECF2; // Gris transparent
+    background-color: #e5e7e6; // Gris transparent
   
     .search-bar, .spaced-search-bar {
       flex: 1;
@@ -50,23 +52,7 @@
       }
     }
   
-    button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      transition-duration: 0.4s;
-      &:hover {
-        background-color: #008CBA;
-        color: white;
-      }
-    }
+   
   }
   
   .card {
@@ -111,5 +97,18 @@
   .input-field {
     height: 40px; /* Adjust as needed */
   }
+  
+  .background {
+    background-image: url('/assets/recherche.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    margin-top: 50px; /* Modifier cette valeur pour déplacer l'image */
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
   
   

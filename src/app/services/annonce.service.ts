@@ -37,6 +37,7 @@ export class AnnonceService {
     const params = {
       depart: searchTerm1,
       destination: searchTerm2,
+      
     };
     return this.httpClient.get<AnnonceCovoiturage[]>('http://localhost:3000/annoncesCovoiturage', { params });
   }
