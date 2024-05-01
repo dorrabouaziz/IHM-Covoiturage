@@ -26,7 +26,14 @@ export class AppComponent implements OnInit {
     }
 
     onActiveItemChange(event: MenuItem) {
-        this.activeItem = event;
+      this.activeItem = event;
+      if (this.isLoggedIn) {
+        if (event.label === 'Connexion') { 
+          this.router.navigate(['/login']);
+        }
+        if (event.label === 'Inscription') { 
+          this.router.navigate(['/register']);
+        }
         if (event.label === 'Recherche') { 
           this.router.navigate(['/liste-annonce']);
         }
@@ -36,15 +43,9 @@ export class AppComponent implements OnInit {
         if (event.label === 'Annonce') { 
           this.router.navigate(['/adminview']);
         }
-        if (event.label === 'Connexion') { 
-          this.router.navigate(['/login']);
-        }
-        if (event.label === 'Inscription') { 
-          this.router.navigate(['/register']);
-        }
-        
-        
+      }
     }
+    
 
     activateLast() {
         this.activeItem = (this.items as MenuItem[])[(this.items as MenuItem[]).length - 1];

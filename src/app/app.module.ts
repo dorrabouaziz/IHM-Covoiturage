@@ -40,6 +40,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { BadgeModule } from 'primeng/badge';
 import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
+import { AnnoncesCovComponent } from './annonces-cov/annonces-cov.component';
 
 
 
@@ -54,6 +55,7 @@ import { FileUploadModule } from 'primeng/fileupload';
     AnnoncesComponent,
     LoginComponent,
     RegisterComponent,
+    AnnoncesCovComponent,
     
 
 

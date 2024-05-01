@@ -55,7 +55,7 @@
                 {{annonce.placesDisponibles}}
               </td>
               <td>
-                <p-button label="Réserver" severity="success" routerLink="/login" class=""></p-button>&nbsp;&nbsp;
+                <p-button label="Réserver" severity="success"(onClick)="reserver(annonce)" class=""></p-button>&nbsp;&nbsp;
                 <p-button label="Détails"  (onClick)="showAnnonceDetails(annonce)"></p-button>
                 
                 
@@ -98,3 +98,4 @@
   </p-dialog>
   <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
  
+

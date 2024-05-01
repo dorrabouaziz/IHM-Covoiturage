@@ -8,6 +8,7 @@ import { AnnoncesComponent } from './annonces/annonces.component';
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {authGuard} from "./guards/auth.guard";
+import { AnnoncesCovComponent } from './annonces-cov/annonces-cov.component';
 
 
 
@@ -59,6 +60,12 @@ const routes: Routes = [
     path: 'annonces',
     pathMatch: 'full',
     component:AnnoncesComponent,
+   
+  },
+  {
+    path: 'annonces-cov',
+    pathMatch: 'full',
+    component:AnnoncesCovComponent,
    
   },
   {
