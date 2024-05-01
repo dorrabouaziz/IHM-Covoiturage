@@ -90,6 +90,7 @@ export class AnnonceFormComponent implements OnInit {
         date: this.formAnnonce.value.dateDepart,
         heureDepart: this.formAnnonce.value.heureDepart,
         placesDisponibles: this.formAnnonce.value.placesDisponibles,
+        image:this.formAnnonce.value.image,
         conducteur: {
           nom: this.formAnnonce.value.nomConducteur,
           telephone: this.formAnnonce.value.telephoneConducteur,

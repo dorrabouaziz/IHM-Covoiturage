@@ -1,8 +1,8 @@
-<div class="background">
-<div class="page-wrapper">
-<form [formGroup]="registerForm" (ngSubmit)="submitDetails()"  class="form-wrapper">
-  <p-card header="Inscription" [style]="{ width: '500px' }">
-    <div class="field">
+<body>
+  <div class="background">
+      <form [formGroup]="registerForm" (ngSubmit)="submitDetails()" class="form-wrapper">
+        <p-card header="Inscription" [style]="{ width: '600px', height:'705px'}">
+          <div class="field">
       <label for="fullName">Nom et prénom</label>
       <input
         type="text"
@@ -118,8 +118,7 @@
       type="submit"
       
     ></p-button>
-    <div class="mt-2">Déja un membre? <a routerLink="/login">Se connecter</a></div>
+    <div class="register-link">Déja un membre? <a routerLink="/login">Se connecter</a></div>
   </p-card>
 </form>
-</div>
 </div>

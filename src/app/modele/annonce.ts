@@ -12,7 +12,7 @@ export interface AnnonceCovoiturage {
   heureDepart: string;
   placesDisponibles: number; 
   conducteur: Conducteur;
-  
+  image: string;
   passagers: Passager[]; 
   
   

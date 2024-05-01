@@ -11,21 +11,55 @@ input {
   display: flex;
   justify-content: left; /* Centre horizontalement */
   align-items: center; /* Centre verticalement */
-  height: 100vh; /* 100% de la hauteur de la vue */
+  margin-left: 1000px;
+  
 }
-
-.form-wrapper {
-  width: 500px;
+.register-link {
+  margin-top: 10px;
+  text-align: center;
+}
+label {
+  display: block;
+  font-weight: bold;
+}
+form {
+  margin-left: 20px;
 }
 .background {
-  //background-image: url('/assets/log.jpg'); /* Remplacez le chemin par votre image d'arrière-plan */
+  background-image: url('/assets/reg.jpg'); /* Remplacez le chemin par votre image d'arrière-plan */
    background-size: cover;
    background-position: center;
-   position: fixed;
+   margin-top: 10px;
    top: 0;
    left: 0;
    width: 100%;
    height: 100%;
-   margin-top: 60px;
- }
  
+ }
+ .welcome-message {
+  
+  text-align: left; /* Centre le texte horizontalement */
+  animation: bounce 2s infinite;
+  display: inline-block;
+  font-size: x-large;
+}
+.pad{
+  margin-top: 20px;
+
+}
+
+
+.gif {
+  max-width: 100%; /* Assure que le GIF ne dépasse pas la largeur du conteneur */
+  height: auto; /* Garantit que le ratio de l'image est préservé */
+  animation: bounce 2s infinite; /* Ajoute une animation au GIF (définissez vos propres paramètres) */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Modifiez la valeur pour ajuster la hauteur du rebond */
+  }
+}

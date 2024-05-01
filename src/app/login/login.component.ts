@@ -34,7 +34,7 @@ export class LoginComponent {
         if (response.length > 0 && response[0].password === password) {
           sessionStorage.setItem('email', email as string);
           this.router.navigate(['/liste-annonce']).then(() => {
-            window.location.reload();
+            this.msgService.add({ severity: 'success', summary: 'Success', detail: 'Connexion réussie' });
           });
         } else {
           this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Email ou mot de passe erroné' });
