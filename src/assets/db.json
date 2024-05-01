@@ -36,7 +36,7 @@
       "conducteur": {
         "nom": "AHMED",
         "telephone": "26091862",
-        "vehicule": "BMW X5",
+        "vehicule": "ford",
         "prix": 25,
         "climatisation": "oui",
         "bagage": "always",
@@ -155,7 +155,12 @@
         "fumeur": "non",
         "sexe": "femme"
       },
-      "passagers": []
+      "passagers": [],
+      "sexe": "femme",
+      "fumeur": "non",
+      "bagage": "auto",
+      "climatisation": "non",
+      "prix": 50
     },
     {
       "id": "3903",
@@ -167,14 +172,19 @@
       "conducteur": {
         "nom": "AHMED",
         "telephone": "26091862",
-        "vehicule": "BMW X5",
+        "vehicule": "range rover",
         "prix": 202,
         "climatisation": "non",
         "bagage": "auto",
         "fumeur": "non",
         "sexe": "femme"
       },
-      "passagers": []
+      "passagers": [],
+      "sexe": "femme",
+      "fumeur": "non",
+      "bagage": "auto",
+      "climatisation": "non",
+      "prix": 202
     },
     {
       "id": "262",
@@ -186,14 +196,19 @@
       "conducteur": {
         "nom": "AHMED",
         "telephone": "26091862",
-        "vehicule": "BMW X5",
+        "vehicule": "clio",
         "prix": 20,
         "climatisation": "non",
         "bagage": "always",
         "fumeur": "non",
         "sexe": "Peu importe"
       },
-      "passagers": []
+      "passagers": [],
+      "sexe": "Peu importe",
+      "fumeur": "non",
+      "bagage": "always",
+      "climatisation": "non",
+      "prix": 20
     },
     {
       "id": "8209",
@@ -212,7 +227,12 @@
         "fumeur": "non",
         "sexe": "homme"
       },
-      "passagers": []
+      "passagers": [],
+      "sexe": "homme",
+      "fumeur": "non",
+      "bagage": "auto",
+      "climatisation": "non",
+      "prix": 3
     },
     {
       "id": "8760",

@@ -21,6 +21,7 @@ export class AdminviewComponent implements OnInit {
   searchDate: string = '';
   date1!: Date;
   searchKeyword1: string = '';
+  imagePath: string[] = [ "../assets/ford.jfif", "../assets/bmw.jpg", "../assets/LandRover.jfif", "../assets/clio.jpg", "../assets/bmw.jpg" , "../assets/passat.jfif", "../assets/chevrolet-cruze.jpg", "../assets/205.jpg", "../assets/207.jpg", "../assets/308.jpg"]; 
 
 
   constructor(private annonceService: AnnonceService) { }

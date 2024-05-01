@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
   annonceDetails!: AnnonceCovoiturage;
   annonceDialog: boolean = false;
   searchTerm: string = '';
+  imagePath: string[] = [ "../assets/ford.jfif", "../assets/bmw.jpg", "../assets/LandRover.jfif", "../assets/clio.jpg"  ]; 
+  
 
   constructor(private annonceService: AnnonceService) { }
   ngOnInit(): void {
