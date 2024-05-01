@@ -4,6 +4,7 @@ import {AuthService} from "./services/auth.service";
 import { MenuItem } from 'primeng/api/menuitem';
 import {User} from "./interfaces/auth";
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,29 +21,14 @@ export class AppComponent implements OnInit {
     this.activeItem = this.items![0];
   }
 
-    onActiveItemChange(event: MenuItem) {
-      this.activeItem = event;
-      if (this.isLoggedIn) {
-        if (event.label === 'Connexion') {
-          this.router.navigate(['/login']);
-        }
-        if (event.label === 'Inscription') {
-          this.router.navigate(['/register']);
-        }
-        if (event.label === 'Recherche') {
-          this.router.navigate(['/liste-annonce']);
-        }
-        if (event.label === 'Accueil') {
-          this.router.navigate(['/home']);
-        }
-        if (event.label === 'Annonce') {
-          this.router.navigate(['/adminview']);
-        }
-        if (event.label === 'Logout') { // Add this condition
-          this.logOut();
-        }
-      }
+  onActiveItemChange(event: MenuItem) {
+    this.activeItem = event;
+    if (event.routerLink) {
+      this.router.navigate([event.routerLink]);
+    } else if (event.label === 'Logout') {
+      this.logOut();
     }
+  }
 
 
     activateLast() {
@@ -52,31 +38,41 @@ export class AppComponent implements OnInit {
   title = 'covoiturages';
   isLoggedIn = false;
 
+  logOut() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+
   constructor(private router: Router, public authService: AuthService) {
     this.authService.isLoggedIn.subscribe(isLoggedIn => {
       this.isLoggedIn = isLoggedIn;
-      this.user = sessionStorage.getItem('email');
+      if (isLoggedIn) {
+        this.user = JSON.parse(sessionStorage.getItem('user') || '{}');
+      } else {
+        this.user = null;
+      }
       this.updateMenuItems();
-    });
-  }
-
-  logOut() {
-    sessionStorage.clear();
-    this.router.navigate(['/login']).then(() => {
-      window.location.reload();
     });
   }
 
   updateMenuItems() {
     this.items = [
-      { label: 'Accueil', icon: 'pi pi-fw pi-home' },
-      { label: 'Recherche', icon: 'pi pi-fw pi-search' },
-      { label: 'Annonce', icon: 'pi pi-fw pi-table' },
-      { label: 'Connexion', icon: 'pi pi-fw pi-users' },
-      { label: 'Inscription', icon: 'pi pi-fw pi-user-plus' },
-      { label: 'Logout', icon: 'pi pi-fw pi-power-off' },
-      { label: `Bonjour, ${this.user}`, icon: 'pi pi-fw pi-user' } // Add this line
+      { label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: '/home' },
+      { label: 'Recherche', icon: 'pi pi-fw pi-search', routerLink: '/liste-annonce' },
+      { label: 'Annonce', icon: 'pi pi-fw pi-table', routerLink: '/adminview' }
     ];
+
+    if (!this.isLoggedIn) {
+      this.items.push(
+        { label: 'Connexion', icon: 'pi pi-fw pi-users', routerLink: '/login' },
+        { label: 'Inscription', icon: 'pi pi-fw pi-user-plus', routerLink: '/register' }
+      );
+    } else {
+      this.items.push(
+        { label: `Bonjour, ${this.user.fullName}`, icon: 'pi pi-fw pi-user' },
+        { label: 'Logout', icon: 'pi pi-fw pi-sign-out', command: () => this.logOut() }
+      );
+    }
   }
 }
 

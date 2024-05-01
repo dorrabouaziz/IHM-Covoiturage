@@ -32,10 +32,9 @@ export class LoginComponent {
     this.authService.getUserByEmail(email as string).subscribe(
       response => {
         if (response.length > 0 && response[0].password === password) {
-          sessionStorage.setItem('email', email as string);
-          this.router.navigate(['/annonces-cov']).then(() => {
+          this.authService.login(response[0]); // Call the login method in AuthService
+          this.router.navigate(['/home']).then(() => { // Navigate to the home page
             this.msgService.add({ severity: 'success', summary: 'Success', detail: 'Connexion réussie' });
-            window.location.reload();
           });
         } else {
           this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Email ou mot de passe erroné' });

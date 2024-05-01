@@ -15,6 +15,18 @@ export class AuthService {
     return this.loggedIn.asObservable();
   }
 
+  login(user: User) {
+    sessionStorage.setItem('user', JSON.stringify(user));
+    console.log(sessionStorage.getItem('user'));
+    this.loggedIn.next(true);
+  }
+
+  logout() {
+    sessionStorage.removeItem('user');
+    sessionStorage.clear();
+    this.loggedIn.next(false);
+  }
+
   constructor(private http: HttpClient) { }
 
   registerUser(userDetails: User) {
@@ -26,6 +38,6 @@ export class AuthService {
   }
 
   isUserLoggedIn(): boolean {
-    return sessionStorage.getItem('email') !== null;
+    return sessionStorage.getItem('user') !== null;
   }
 }
