@@ -13,6 +13,9 @@ import { v4 as uuidv4 } from 'uuid';
 export class AnnonceFormComponent implements OnInit {
   annonceId!: string;
   formAnnonce: FormGroup;
+  cities= ['Tunis', 'Sfax', 'Sousse', 'Kairouan', 'Gabès', 'Bizerte', 'Ariana', 'Gafsa', 'Monastir', 'Ben Arous', 'Nabeul', 'Mahdia', 'Kasserine', 'Medenine', 'Jendouba', 'Sidi Bouzid', 'Manouba', 'Tataouine', 'Kef', 'Siliana', 'Zaghouan', 'Kebili', 'Beja', 'Tozeur'
+        
+];
 
   constructor(
     private annonceService: AnnonceService,
