@@ -1,0 +1,51 @@
+<p-table #dt  
+[globalFilterFields]="['depart', 'destination','date']" ></p-table>
+<div class="filtre">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input pInputText type="text" [(ngModel)]="searchKeyword" (input)="dt.filterGlobal(searchKeyword, 'contains')"
+      placeholder="Rechercher"/>
+    </span>
+  </div>
+<div class="card-container  justify-content-center">
+    <ng-container *ngIf="annonces">
+      <ng-container *ngFor="let annonce of annonces; ; let i = index">
+        <p-card field="depart"
+          header="{{ annonce.depart }} -- {{ annonce.destination }}"
+          subheader="Annonce"
+          [style]="{ width: '320px', margin: '10px' }"
+        >
+        <ng-template pTemplate="header">
+          <img  class="image"  [src]="imagePath[i]" />
+        </ng-template>
+          <p >{{ annonce.date | date:'yyyy-MM-dd ' }}</p>
+          <p>{{ annonce.conducteur.prix }} DT</p>
+          <p>{{ annonce.placesDisponibles }} places disponibles</p>
+          <ng-template pTemplate="footer">
+            <p-button label="Réserver" icon="pi pi-book" styleClass="p-button-success" (onClick)="reserver(annonce)"></p-button>
+            <p-button label="Détails" icon="pi pi-plus" [style]="{ 'margin-left': '.5em' }" (onClick)="loadAnnonceDetails(annonce.id)"></p-button>
+          </ng-template>
+        </p-card>
+        <!-- Ajoutez un retour à la ligne après chaque quatrième carte -->
+        <div *ngIf="(i + 1) % 4 === 0" style="width: 100%; height: 10px;"></div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <p-dialog [(visible)]="annonceDialog" header="Détails de l'annonce"  [modal]="true" [style]="{ width: '60rem' }" (onHide)="hideAnnonceDialog()">
+    <div *ngIf="annonceDetails" class="dialog-content">
+      <h1>{{ annonceDetails.depart }} - {{ annonceDetails.destination }}</h1>
+      <p>Heure de départ: {{ annonceDetails.heureDepart }}</p>
+      <h2>Conducteur</h2>
+      <p>Nom: {{ annonceDetails.conducteur.nom }}</p>
+      <p>Téléphone: {{ annonceDetails.conducteur.telephone }}</p>
+      <p>Véhicule: {{ annonceDetails.conducteur.vehicule }}</p>
+   
+      <h2>Options</h2>
+      <p>Climatisation: {{ annonceDetails.conducteur.climatisation ? 'Oui' : 'Non' }}</p>
+      <p>Bagage: {{ annonceDetails.conducteur.bagage ? 'Autorisé' : 'Non autorisé'}}</p>
+      <p>Fumeur: {{ annonceDetails.conducteur.fumeur ? 'Oui' : 'Non' }}</p>
+      <p>Sexe: {{ annonceDetails.conducteur.sexe }}</p>
+      
+    </div>
+  </p-dialog>
+ 

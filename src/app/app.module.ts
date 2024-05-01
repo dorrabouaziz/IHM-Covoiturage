@@ -41,6 +41,7 @@ import { BadgeModule } from 'primeng/badge';
 import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
 import { AnnoncesCovComponent } from './annonces-cov/annonces-cov.component';
+import { AnnoncesResComponent } from './annonces-res/annonces-res.component';
 
 
 
@@ -56,6 +57,7 @@ import { AnnoncesCovComponent } from './annonces-cov/annonces-cov.component';
     LoginComponent,
     RegisterComponent,
     AnnoncesCovComponent,
+    AnnoncesResComponent,
     
 
 
