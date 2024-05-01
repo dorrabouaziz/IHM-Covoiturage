@@ -35,6 +35,7 @@ export class LoginComponent {
           sessionStorage.setItem('email', email as string);
           this.router.navigate(['/annonces-cov']).then(() => {
             this.msgService.add({ severity: 'success', summary: 'Success', detail: 'Connexion réussie' });
+            window.location.reload();
           });
         } else {
           this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Email ou mot de passe erroné' });
