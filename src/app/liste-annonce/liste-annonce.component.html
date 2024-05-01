@@ -1,13 +1,20 @@
 <p-toast></p-toast>
 
 <div class="multi-search-bar-container">
-   
-      <p-dropdown [options]="cities" [(ngModel)]="searchTerm1"  class="custom-dropdown" placeholder="Départ"></p-dropdown>
+ 
+  <select id="searchTerm1" class="large-dropdown custom-dropdown" [(ngModel)]="searchTerm1">
+      <option value="" disabled selected>Départ</option>
+      <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+  </select>
 
-      <p-dropdown [options]="cities" [(ngModel)]="searchTerm2"  class="custom-dropdown" placeholder="Destination" ></p-dropdown>
-    
-    <p-button label="Rechercher" [loading]="loading" (onClick)="onSearch()"></p-button>  </div>
-    <div *ngIf="!showTable" class="background">
+  <select id="searchTerm2" class="large-dropdown custom-dropdown" [(ngModel)]="searchTerm2">
+      <option value="" disabled selected>Destination</option>
+      <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+  </select>
+  
+  <p-button label="Rechercher" [loading]="loading" (onClick)="onSearch()"></p-button>  
+</div>
+<div *ngIf="!showTable" class="background">
 </div>
 <div class="card" *ngIf="showTable">
   <p-table #dt [value]="annonces" [rows]="20" [showCurrentPageReport]="true"
