@@ -1,10 +1,8 @@
-<p>Bienvenue sur [Nom de votre site], la plateforme de covoiturage qui vous connecte avec des compagnons <br>
-  de voyage partageant les mêmes trajets et intérêts. Inscrivez-vous dès maintenant pour profiter des avantages.</p>
-<div class="background">
-<div class="page-wrapper">
-<form [formGroup]="registerForm" (ngSubmit)="submitDetails()"  class="form-wrapper">
-  <p-card header="Inscription" [style]="{ width: '500px', height:'700px'}">
-    <div class="field">
+<body>
+  <div class="background">
+      <form [formGroup]="registerForm" (ngSubmit)="submitDetails()" class="form-wrapper">
+        <p-card header="Inscription" [style]="{ width: '600px', height:'705px'}">
+          <div class="field">
       <label for="fullName">Nom et prénom</label>
       <input
         type="text"
@@ -123,5 +121,4 @@
     <div class="mt-2">Déja un membre? <a routerLink="/login">Se connecter</a></div>
   </p-card>
 </form>
-</div>
 </div>
