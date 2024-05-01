@@ -73,6 +73,7 @@ export class AppComponent implements OnInit {
         { label: 'Annonces', icon: 'pi pi-fw pi-table', routerLink: '/adminview' },
         { label: 'Ajouter annonce', icon: 'pi pi-fw pi-plus', routerLink: '/create' },
         { label: 'Mes annonces', icon: 'pi pi-fw pi-table', routerLink: '/annonces' },
+        { label: '‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ' },
         { label: `Bonjour, ${this.user.fullName}`, icon: 'pi pi-fw pi-user' },
         { label: 'Logout', icon: 'pi pi-fw pi-sign-out', command: () => this.logOut() }
       ];
