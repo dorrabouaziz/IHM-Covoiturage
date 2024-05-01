@@ -5,13 +5,19 @@
   <div class="form-row">
     <mat-form-field class="example-full-width">
       <mat-label>Départ:</mat-label>
-      <input matInput type="text" formControlName="depart" required>
+      <select matNativeControl id="searchTerm1" class="large-dropdown custom-dropdown" formControlName="depart" required>
+          <option value="" disabled selected>Départ</option>
+          <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+      </select>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Destination:</mat-label>
-      <input matInput type="text" formControlName="destination" required>
+      <select matNativeControl id="searchTerm2" class="large-dropdown custom-dropdown" formControlName="destination" required>
+          <option value="" disabled selected>Destination</option>
+          <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+      </select>
     </mat-form-field>
-  </div>
+</div>
   <div class="form-row">
     <mat-form-field class="example-full-width">
       <mat-label>Date de départ:</mat-label>
