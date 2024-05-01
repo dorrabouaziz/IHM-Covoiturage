@@ -69,26 +69,26 @@
       </ng-template>
   </p-table>
 </div>
-<p-dialog [(visible)]="annonceDialog" header="Détails de l'annonce" [modal]="true" [style]="{ width: '600px',height:'750px' }">
+<p-dialog [(visible)]="annonceDialog" header="Détails de l'annonce" [modal]="true" [style]="{ width: '500px',height:'500px' }">
   
     <ng-template pTemplate="content">
       <div *ngIf="annonceDetails">
-        <p class="titre">Nom du conducteur:</p>
-        <p> {{ annonceDetails.conducteur.nom }}</p>
-        <p class="titre">Téléphone:</p>
-        <p>{{ annonceDetails.conducteur.telephone }}</p>
-        <p class="titre">Véhicule:</p>
-        <p>{{ annonceDetails.conducteur.vehicule }}</p>
-        <p class="titre">Prix:</p>
-        <p>{{ annonceDetails.conducteur.prix }}</p>
-        <p class="titre">Climatisation: </p>
-        <p>{{ annonceDetails.conducteur.climatisation}}</p>
-        <p class="titre">Bagage:</p>
-        <p>{{ annonceDetails.conducteur.bagage }}</p>
-        <p class="titre">Fumeur:</p>
-        <p> {{ annonceDetails.conducteur.fumeur }}</p>
-        <p class="titre">Sexe:</p>
-        <p> {{ annonceDetails.conducteur.sexe}}</p>
+        <p class="titre"><span>Nom du conducteur:</span> {{ annonceDetails.conducteur.nom }}</p>
+      
+        <p class="titre"><span>Téléphone:</span> {{ annonceDetails.conducteur.telephone }}</p>
+       
+        <p class="titre"><span>Véhicule:</span> {{ annonceDetails.conducteur.vehicule }}</p>
+   
+        <p class="titre"><span>Prix:</span> {{ annonceDetails.conducteur.prix }}</p>
+    
+        <p class="titre"><span>Climatisation:</span> {{ annonceDetails.conducteur.climatisation}}</p>
+   
+        <p class="titre"><span>Bagage: </span>{{ annonceDetails.conducteur.bagage }}</p>
+    
+        <p class="titre"><span>Fumeur:</span>  {{ annonceDetails.conducteur.fumeur }}</p>
+    
+        <p class="titre"><span>Sexe: </span>{{ annonceDetails.conducteur.sexe}}</p>
+        
         
       </div>
     </ng-template>
