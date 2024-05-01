@@ -17,12 +17,29 @@
       "phoneNumber": "25287750"
     },
     {
+<<<<<<< Updated upstream
       "id": "195b",
       "fullName": "Dorra Bouaziz",
       "email": "dorrabouaziz736@gmail.com",
       "password": "123456",
       "city": "Sfax",
       "phoneNumber": "51380720"
+=======
+      "id": "d74a",
+      "fullName": "habaib ahmed",
+      "email": "ahmedhabaib1@gmail.com",
+      "password": "11093000",
+      "city": "sfax",
+      "phoneNumber": "25287750"
+    },
+    {
+      "id": "6935",
+      "fullName": "habaib ahmed",
+      "email": "ahmedhabaib1@gmail.com",
+      "password": "11093000",
+      "city": "sfax",
+      "phoneNumber": "25287750"
+>>>>>>> Stashed changes
     }
   ],
   "annoncesCovoiturage": [
