@@ -32,18 +32,22 @@ export class ListeAnnonceComponent  {
   constructor(private annonceService: AnnonceService, private messageService: MessageService, private confirmationService: ConfirmationService , private router:Router) { }
   
   onSearch(): void {
-    if (this.searchTerm1 && this.searchTerm2  ) {
+    if (this.searchTerm1 && this.searchTerm2) {
       const searchTerm1Lower = this.searchTerm1.toUpperCase();
       const searchTerm2Lower = this.searchTerm2.toUpperCase();
-      
   
       this.annonceService.filtrerAnnonces(searchTerm1Lower, searchTerm2Lower)
         .subscribe(annoncesFiltrees => {
-          
           // Filter announcements with nbPlace > 0
           const annoncesWithPlaces = annoncesFiltrees.filter(annonce => annonce.placesDisponibles > 0);
           this.annonces = annoncesWithPlaces;
           this.showTable = this.annonces.length > 0;
+  
+          if (this.showTable) {
+            this.messageService.add({severity:'success', summary:'Offres proposées', detail:''});
+          } else {
+            this.messageService.add({severity:'error', summary:'Pas d\'offres disponibles', detail:''});
+          }
         });
     }
   }

@@ -44,7 +44,13 @@ export class AnnoncesCovComponent {
           const annoncesWithPlaces = annoncesFiltrees.filter(annonce => annonce.placesDisponibles > 0);
           this.annonces = annoncesWithPlaces;
           this.showTable = this.annonces.length > 0;
-        });
+        
+        if (this.showTable) {
+          this.messageService.add({severity:'success', summary:'Offres proposées', detail:''});
+        } else {
+          this.messageService.add({severity:'error', summary:'Pas d\'offres disponibles', detail:''});
+        }
+      });
     }
   }
   
