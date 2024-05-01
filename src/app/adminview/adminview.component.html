@@ -1,5 +1,5 @@
 <p-table #dt  
-[globalFilterFields]="['depart']" ></p-table>
+[globalFilterFields]="['depart', 'destination','date']" ></p-table>
 <div class="filtre">
     <span class="p-input-icon-left">
       <i class="pi pi-search"></i>
@@ -10,7 +10,7 @@
 <div class="card-container  justify-content-center">
     <ng-container *ngIf="annonces">
       <ng-container *ngFor="let annonce of annonces; let i = index">
-        <p-card
+        <p-card field="depart"
           header="{{ annonce.depart }} -- {{ annonce.destination }}"
           subheader="Annonce"
           [style]="{ width: '320px', margin: '10px' }"
@@ -18,7 +18,7 @@
           <ng-template pTemplate="header">
             <img src="../assets/car2.jpg" />
           </ng-template>
-          <p>{{ annonce.date | date:'yyyy-MM-dd ' }}</p>
+          <p >{{ annonce.date | date:'yyyy-MM-dd ' }}</p>
           <p>{{ annonce.conducteur.prix }} DT</p>
           <p>{{ annonce.placesDisponibles }} places disponibles</p>
           <ng-template pTemplate="footer">

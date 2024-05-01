@@ -3,7 +3,7 @@
     <p-toolbar styleClass="mb-4 gap-2">
       <ng-template pTemplate="left">
         <button routerLink="/create" pButton pRipple label="Nouveau" icon="pi pi-plus"
-                class="p-button-success mr-2"></button>
+                class="p-button-success mr-3"></button>
         <button pButton pRipple label="Supprimer" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedAnnonce()"
                 [disabled]="!selectedAnnonce || !selectedAnnonce.length"></button>
       </ng-template>
@@ -17,14 +17,11 @@
              currentPageReportTemplate="Affichage de {first} à {last} sur un total de {totalRecords} entrées"
              [showCurrentPageReport]="true" [rowsPerPageOptions]="[5, 10, 20]">
       <ng-template pTemplate="caption">
-        <div class="flex align-items-center justify-content-between">
-          <h5 class="m-0">Liste des annonces</h5>
+        <div class="filtre">
           <span class="p-input-icon-left">
-              
-           
-            <input class="filtre" type="text" [(ngModel)]="searchKeyword" (input)="dt.filterGlobal(searchKeyword, 'contains')"
-                   placeholder="Rechercher"/>
-  
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" [(ngModel)]="searchKeyword" (input)="dt.filterGlobal(searchKeyword, 'contains')"
+            placeholder="Rechercher"/>
           </span>
         </div>
       </ng-template>

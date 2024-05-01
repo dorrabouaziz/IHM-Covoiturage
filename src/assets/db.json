@@ -32,7 +32,7 @@
       "destination": "TUNIS",
       "date": "2024-04-12T23:00:00.000Z",
       "heureDepart": "20:00",
-      "placesDisponibles": 0,
+      "placesDisponibles": 2,
       "conducteur": {
         "nom": "AHMED",
         "telephone": "26091862",
@@ -43,13 +43,12 @@
         "fumeur": "oui",
         "sexe": "homme"
       },
-      "passagers": [
-        {
-          "nom": "John Doe",
-          "telephone": "123-456-7890",
-          "sexe": "Male"
-        }
-      ]
+      "passagers": [],
+      "sexe": "homme",
+      "fumeur": "oui",
+      "bagage": "always",
+      "climatisation": "oui",
+      "prix": 25
     },
     {
       "id": "6024",
@@ -145,7 +144,7 @@
       "destination": "TUNIS",
       "date": "2024-04-12T23:00:00.000Z",
       "heureDepart": "03:00",
-      "placesDisponibles": 3,
+      "placesDisponibles": 2,
       "conducteur": {
         "nom": "AHMED",
         "telephone": "26091862",
@@ -257,6 +256,54 @@
       "bagage": "auto",
       "climatisation": "non",
       "prix": 25
+    },
+    {
+      "id": "97b6f97c-84cf-4f89-a2c1-9f3216d3c6af",
+      "depart": "Tunis",
+      "destination": "Sfax",
+      "date": "2024-05-08T22:00:00.000Z",
+      "heureDepart": "16:00",
+      "placesDisponibles": 5,
+      "conducteur": {
+        "nom": "dorra",
+        "telephone": "51380720",
+        "vehicule": "range rover",
+        "prix": 25,
+        "climatisation": "oui",
+        "bagage": "always",
+        "fumeur": "non",
+        "sexe": "Peu importe"
+      },
+      "passagers": [],
+      "sexe": "Peu importe",
+      "fumeur": "non",
+      "bagage": "always",
+      "climatisation": "oui",
+      "prix": 25
+    },
+    {
+      "id": "d46479b3-c2fc-4cda-a811-daa0deef435d",
+      "depart": "sfax",
+      "destination": "jerba",
+      "date": "2024-05-08T22:00:00.000Z",
+      "heureDepart": "16:00",
+      "placesDisponibles": 5,
+      "conducteur": {
+        "nom": "dorra",
+        "telephone": "5",
+        "vehicule": "range",
+        "prix": 35,
+        "climatisation": false,
+        "bagage": "",
+        "fumeur": false,
+        "sexe": "Peu importe"
+      },
+      "passagers": [],
+      "sexe": "Peu importe",
+      "fumeur": false,
+      "bagage": "",
+      "climatisation": false,
+      "prix": 35
     }
   ]
 }

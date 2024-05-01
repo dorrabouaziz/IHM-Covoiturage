@@ -25,13 +25,13 @@ const routes: Routes = [
     path:':id/edit',
     pathMatch:'full',
     component:AnnonceFormComponent,
-    canActivate: [authGuard]
+    
   },
   {
     path: 'create',
     pathMatch: 'full',
     component:AnnonceFormComponent,
-    canActivate: [authGuard]
+    
   },
   {
     path: 'liste-annonce',

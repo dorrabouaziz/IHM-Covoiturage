@@ -42,6 +42,8 @@ export class AnnoncesComponent implements OnInit {
       message: 'Êtes-vous sûr de vouloir supprimer les actifs sélectionnés ?',
       header: 'Confirmation',
       icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Oui', 
+      rejectLabel: 'Non', 
       accept: () => {
         if (this.selectedAnnonce) {
           const deletionObservables = this.selectedAnnonce.map(annonce => this.annonceService.supprimerAnnonce(Number(annonce.id)));
@@ -82,6 +84,8 @@ export class AnnoncesComponent implements OnInit {
       message: 'Êtes-vous sûr de vouloir supprimer cette annonce?',
       header: 'Confirmation',
       icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Oui', 
+      rejectLabel: 'Non', 
       accept: () => {
          // Convert the id from string to number
 

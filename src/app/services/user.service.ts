@@ -20,6 +20,10 @@ getUser(id: string): Observable<any> {
   console.log('Request URL:', `${this.apiUrl}/${id}`);
   return this.http.get(`${this.apiUrl}/${id}`);
 }
+getRequestsForLoggedInUser(): Observable<any> {
+  return this.http.get(`${this.apiUrl}/annonces`);
+}
+
 
   // Create a new user
   createUser(user: any): Observable<any> {

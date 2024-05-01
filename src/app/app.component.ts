@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
 
   logOut() {
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
 
   constructor(private router: Router, public authService: AuthService) {
@@ -56,24 +56,29 @@ export class AppComponent implements OnInit {
   }
 
   updateMenuItems() {
-    this.items = [
-      { label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: '/home' },
-      { label: 'Recherche', icon: 'pi pi-fw pi-search', routerLink: '/liste-annonce' },
-      { label: 'Annonce', icon: 'pi pi-fw pi-table', routerLink: '/adminview' }
-    ];
-
     if (!this.isLoggedIn) {
-      this.items.push(
+      // Si l'utilisateur n'est pas connecté, afficher les pages de connexion et d'inscription
+      this.items = [
+        { label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: '/home' },
+        { label: 'Recherche', icon: 'pi pi-fw pi-search', routerLink: '/liste-annonce' },
+        { label: 'Annonce', icon: 'pi pi-fw pi-table', routerLink: '/adminview' },
         { label: 'Connexion', icon: 'pi pi-fw pi-users', routerLink: '/login' },
         { label: 'Inscription', icon: 'pi pi-fw pi-user-plus', routerLink: '/register' }
-      );
+      ];
     } else {
-      this.items.push(
+      // Si l'utilisateur est connecté, afficher les pages pour l'utilisateur connecté
+      this.items = [
+        { label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: '/home' },
+        { label: 'Recherche', icon: 'pi pi-fw pi-search', routerLink: '/annonces-cov' },
+        { label: 'Annonce', icon: 'pi pi-fw pi-table', routerLink: '/adminview' },
+        { label: 'Ajouter annonce', icon: 'pi pi-fw pi-plus', routerLink: '/create' },
+        { label: 'Mes annonces', icon: 'pi pi-fw pi-table', routerLink: '/annonces' },
         { label: `Bonjour, ${this.user.fullName}`, icon: 'pi pi-fw pi-user' },
         { label: 'Logout', icon: 'pi pi-fw pi-sign-out', command: () => this.logOut() }
-      );
+      ];
     }
   }
+  
 }
 
 
