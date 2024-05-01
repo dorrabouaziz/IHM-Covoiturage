@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
       this.items = [
         { label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: '/home' },
         { label: 'Recherche', icon: 'pi pi-fw pi-search', routerLink: '/annonces-cov' },
-        { label: 'Annonce', icon: 'pi pi-fw pi-table', routerLink: '/adminview' },
+        { label: 'Annonces', icon: 'pi pi-fw pi-table', routerLink: '/adminview' },
         { label: 'Ajouter annonce', icon: 'pi pi-fw pi-plus', routerLink: '/create' },
         { label: 'Mes annonces', icon: 'pi pi-fw pi-table', routerLink: '/annonces' },
         { label: `Bonjour, ${this.user.fullName}`, icon: 'pi pi-fw pi-user' },
