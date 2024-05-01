@@ -1,32 +1,78 @@
-.fieldnpm {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-input {
-  margin-top: 5px;
-}
-/* styles.scss */
-
-/* styles.scss */
-
 .login-container {
-  display: flex; /* Arrange elements side-by-side */
-  gap: 2rem; /* Add space between form and image */
-  
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 80vh;
+  margin-top: 20px;
+  margin-left: 20px;
+
+
 }
 
-.login-container img {
+.login-form {
   width: 400px;
-   /* Adjust image width as needed */
-  flex: 0 0 auto; /* Allow form to grow and wrap */
-  order: 1; /* Move image to the right */
+
 }
 
-.login-container form {
-  flex: 1; /* Make form take up remaining space */
-  order: 0; /* Move form to the left */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
+.card-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: #ff0000;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.register-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+.background {
+ background-image: url('/assets/log.jpg'); /* Remplacez le chemin par votre image d'arrière-plan */
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+}
 

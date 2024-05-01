@@ -38,7 +38,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ButtonModule} from "primeng/button";
 import { TabMenuModule } from 'primeng/tabmenu';
 import { BadgeModule } from 'primeng/badge';
-
+import { DropdownModule } from 'primeng/dropdown';
+import { FileUploadModule } from 'primeng/fileupload';
 
 
 
@@ -53,6 +54,7 @@ import { BadgeModule } from 'primeng/badge';
     AnnoncesComponent,
     LoginComponent,
     RegisterComponent,
+    
 
 
 
@@ -87,7 +89,9 @@ import { BadgeModule } from 'primeng/badge';
     InputTextModule,
     BrowserAnimationsModule,
     TabMenuModule,
-    BadgeModule
+    BadgeModule,
+    FileUploadModule,
+    DropdownModule
     
     
 

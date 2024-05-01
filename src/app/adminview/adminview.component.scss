@@ -1,32 +1,50 @@
+.card-container {
+  display: flex; /* Make the container a flexbox */
+  flex-wrap: wrap; /* Permet aux éléments de s'enrouler sur plusieurs lignes */
+}
+
+p-card {
+  /* Adjust card width and margin as needed based on your design */
+  width: 320px;
+  margin: 10px;
+  margin-left: 40px;
+}
+
 .dialog-content {
-    background-color: #e7e7e7;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .dialog-content h1, .dialog-content h2 {
-    color: #0f488d;
-  }
-  .filtre {
-    width : 100%;
-    padding: 7px
-  }
-  .titre {
-      font-size: medium;
-      font-weight: bold;
-    }
-  .dialog-content p {
-    color: #242e31;
-  }
-  .button-container {
-    width: 110%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px; /* Espacement en haut des boutons */
+  background-color: #e7e7e7;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.dialog-content h1, .dialog-content h2 {
+  color: blue;
+}
+
+.filtre {
+  width : 100%;
+  padding: 7px
+}
+
+.titre {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.dialog-content p {
+  color: black;
+}
+
+.button-container {
+  width: 110%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Espacement en haut des boutons */
 }
 
 .button-container p-button {
-    flex: 1; /* Pour répartir l'espace de manière égale entre les boutons */
-    margin-right: 10px; /* Espacement horizontal entre les boutons */
+  flex: 1; /* Pour répartir l'espace de manière égale entre les boutons */
+ 
 }
-
+.filtre{
+  margin-left: 1200px;
+}

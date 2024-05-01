@@ -1,74 +1,40 @@
-<div class="card">
-    <p-table #dt [value]="annonces" [rows]="5" [showCurrentPageReport]="true"
-             [rowsPerPageOptions]="[5, 10, 20]" [loading]="loading" [paginator]="true"
-             currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} annonces"
-             [globalFilterFields]="['depart', 'destination', 'date', 'heureDepart', 'placesDisponibles']"
-             [tableStyle]="{ 'min-width': '75rem' }">
-             <ng-template pTemplate="caption">
-                <div class="flex align-items-center justify-content-between">
-                  <h5 class="titre">Liste des annonces</h5>
-                  <span class="p-input-icon-left">
-                      
-                   
-                    <input class="filtre" type="text" [(ngModel)]="searchKeyword" (input)="dt.filterGlobal(searchKeyword, 'contains')"
-                           placeholder="Rechercher"/>
-          
-                  </span>
-                </div>
-              </ng-template>
-        
-        <ng-template pTemplate="header">
-            <tr>
-                <th style="width:12%">Départ</th>
-                <th style="width:12%">Destination</th>
-                <th style="width:12%">Date</th>
-                <th style="width:12%">Heure</th>
-                <th style="width:12%">Places disponibles</th>
-                <th style="width:12%">Actions</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-annonce>
-            <tr>
-                <td>
-                    {{ annonce.depart }}
-                </td>
-                <td>
-                    {{ annonce.destination }}
-                </td>
-                <td>
-                    {{ annonce.date | date:'yyyy-MM-dd '}}
-                </td>
-                <td>
-                    {{ annonce.heureDepart }}
-                </td>
-                <td>
-                    {{ annonce.placesDisponibles }}
-                </td>
-                <td>
-                    <div class="button-container">
-                        <p-button (click)="loadAnnonceDetails(annonce.id)" label="Voir détails" severity="info"></p-button>
-                        <p-button (click)="supprimerAnnonce(annonce.id)" label="Supprimer" severity="danger"></p-button>
-                    </div>
-                    
-                    
-                </td>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="emptymessage">
-            <tr>
-                <td colspan="5">Pas d'annonces trouvées.</td>
-            </tr>
-        </ng-template>
-    </p-table>
+<p-table #dt  
+[globalFilterFields]="['depart']" ></p-table>
+<div class="filtre">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input pInputText type="text" [(ngModel)]="searchKeyword" (input)="dt.filterGlobal(searchKeyword, 'contains')"
+      placeholder="Rechercher"/>
+    </span>
   </div>
-  
-  <p-dialog [(visible)]="annonceDialog" header="Détails de l'annonce" [modal]="true" [style]="{ width: '60rem', height:'100rem' }" (onHide)="hideAnnonceDialog()">
+<div class="card-container flex justify-content-center">
+    <ng-container *ngIf="annonces">
+      <ng-container *ngFor="let annonce of annonces; let i = index">
+        <p-card
+          header="{{ annonce.depart }} -- {{ annonce.destination }}"
+          subheader="Annonce"
+          [style]="{ width: '320px', margin: '10px' }"
+        >
+          <ng-template pTemplate="header">
+            <img src="../assets/car2.jpg" />
+          </ng-template>
+          <p>{{ annonce.date | date:'yyyy-MM-dd ' }}</p>
+          <p>{{ annonce.conducteur.prix }} DT</p>
+          <p>{{ annonce.placesDisponibles }} places disponibles</p>
+          <ng-template pTemplate="footer">
+            <p-button label="Réserver" icon="pi pi-book" styleClass="p-button-success" routerLink="/login"></p-button>
+            <p-button label="Détails" icon="pi pi-plus" [style]="{ 'margin-left': '.5em' }" (onClick)="loadAnnonceDetails(annonce.id)"></p-button>
+          </ng-template>
+        </p-card>
+        <!-- Ajoutez un retour à la ligne après chaque quatrième carte -->
+        <div *ngIf="(i + 1) % 4 === 0" style="width: 100%; height: 10px;"></div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <p-dialog [(visible)]="annonceDialog" header="Détails de l'annonce"  [modal]="true" [style]="{ width: '60rem' }" (onHide)="hideAnnonceDialog()">
     <div *ngIf="annonceDetails" class="dialog-content">
       <h1>{{ annonceDetails.depart }} - {{ annonceDetails.destination }}</h1>
-      <p>Date: {{ annonceDetails.date | date }}</p>
       <p>Heure de départ: {{ annonceDetails.heureDepart }}</p>
-      <p>Places disponibles: {{ annonceDetails.placesDisponibles }}</p>
-      <p>Prix: {{ annonceDetails.conducteur.prix }}</p>
       <h2>Conducteur</h2>
       <p>Nom: {{ annonceDetails.conducteur.nom }}</p>
       <p>Téléphone: {{ annonceDetails.conducteur.telephone }}</p>
@@ -76,14 +42,10 @@
    
       <h2>Options</h2>
       <p>Climatisation: {{ annonceDetails.conducteur.climatisation ? 'Oui' : 'Non' }}</p>
-      <p>Bagage: {{ annonceDetails.conducteur.bagage }}</p>
+      <p>Bagage: {{ annonceDetails.conducteur.bagage ? 'Autorisé' : 'Non autorisé'}}</p>
       <p>Fumeur: {{ annonceDetails.conducteur.fumeur ? 'Oui' : 'Non' }}</p>
       <p>Sexe: {{ annonceDetails.conducteur.sexe }}</p>
-      <h2>Passagers</h2>
-      <div *ngFor="let passager of annonceDetails.passagers">
-        <p>Nom: {{ passager.nom }}</p>
-        <p>Téléphone: {{ passager.telephone }}</p>
-        <p>Sexe: {{ passager.sexe }}</p>
-      </div>
+      
     </div>
   </p-dialog>
+  

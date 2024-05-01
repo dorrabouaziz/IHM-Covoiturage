@@ -1,22 +1,20 @@
 <p-toast></p-toast>
+
 <div class="multi-search-bar-container">
-    <span class="spaced-search-bar p-input-icon-left">
-        <input class="input-field"  type="text" [(ngModel)]="searchTerm1" placeholder="Départ">
-    </span>
-    <div class="search-bar">
-        <input class="input-field"  type="text" [(ngModel)]="searchTerm2" placeholder="Destination">
-    </div>
-    <div class="search-bar">
-      <p-calendar  class="input-field"[(ngModel)]="date1" [showIcon]="true" inputId="buttondisplay"></p-calendar>
-    </div>
-    <button (click)="onSearch()">Rechercher</button>
-  </div>
+   
+      <p-dropdown [options]="cities" [(ngModel)]="searchTerm1"  class="custom-dropdown" placeholder="Départ"></p-dropdown>
+
+      <p-dropdown [options]="cities" [(ngModel)]="searchTerm2"  class="custom-dropdown" placeholder="Destination" ></p-dropdown>
+    
+    <p-button label="Rechercher" [loading]="loading" (onClick)="onSearch()"></p-button>  </div>
+    <div *ngIf="!showTable" class="background">
+</div>
 <div class="card" *ngIf="showTable">
-  <p-table #dt [value]="annonces" [rows]="5" [showCurrentPageReport]="true"
+  <p-table #dt [value]="annonces" [rows]="20" [showCurrentPageReport]="true"
            [rowsPerPageOptions]="[5, 10, 20]" [loading]="loading" [paginator]="true"
            currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} annonces"
            [globalFilterFields]="['depart', 'destination', 'date', 'heureDepart', 'placesDisponibles']"
-           [tableStyle]="{ 'min-width': '75rem' }">
+           [tableStyle]="{ 'min-width': '75rem'}">
       
       <ng-template pTemplate="header">
           <tr>
@@ -50,8 +48,9 @@
                 {{annonce.placesDisponibles}}
               </td>
               <td>
-                <button  (click)="reserver(annonce)" >Réserver</button>
-                <button (click)="showAnnonceDetails(annonce)">Détails</button> 
+                <p-button label="Réserver" severity="success" (click)="reserver(annonce)" class=""></p-button>&nbsp;&nbsp;
+                <p-button label="Détails"  (onClick)="showAnnonceDetails(annonce)"></p-button>
+                
                 
               </td>
           </tr>
@@ -91,3 +90,4 @@
     </ng-template>
   </p-dialog>
   <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
+ 

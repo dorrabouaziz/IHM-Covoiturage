@@ -11,6 +11,10 @@ import { map } from 'rxjs';
 export class HomeComponent implements OnInit {
   annonces!: AnnonceCovoiturage[]; // Declare 'annonces' property
   annonce!:AnnonceCovoiturage;
+  loading: boolean = false;
+  annonceDetails!: AnnonceCovoiturage;
+  annonceDialog: boolean = false;
+  searchTerm: string = '';
 
   constructor(private annonceService: AnnonceService) { }
   ngOnInit(): void {
@@ -23,6 +27,23 @@ export class HomeComponent implements OnInit {
       .subscribe((filteredAnnonces: AnnonceCovoiturage[]) => {
         this.annonces = filteredAnnonces;
       });
+  }
+  
+  loadAnnonceDetails(id: string) {
+    const idNumber = parseInt(id); // Convert the id from string to number
+    this.annonceService.recupererAnnonceParId(idNumber).subscribe(
+      (data: AnnonceCovoiturage) => {
+        this.annonceDetails = data;
+        console.log('Annonce Details:', this.annonceDetails);
+        this.annonceDialog = true;
+      },
+      (error: any) => {
+        console.error('Erreur lors du chargement des détails de l\'annonce :', error);
+      }
+    );
+  }
+  hideAnnonceDialog() {
+    this.annonceDialog = false;
   }
 
   

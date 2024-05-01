@@ -1,10 +1,10 @@
 // Modèle pour une annonce de covoiturage
 export interface AnnonceCovoiturage {
-sexe: any;
-fumeur: any;
-bagage: any;
-climatisation: any;
-prix: any;
+  sexe: any;
+  fumeur: any;
+  bagage: any;
+  climatisation: any;
+  prix: any;
   id: string; 
   depart: string; 
   destination: string; 
@@ -12,7 +12,10 @@ prix: any;
   heureDepart: string;
   placesDisponibles: number; 
   conducteur: Conducteur;
+  
   passagers: Passager[]; 
+  
+  
 }
 
 // Modèle pour les informations sur le conducteur

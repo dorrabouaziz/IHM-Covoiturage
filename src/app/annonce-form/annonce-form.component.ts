@@ -33,7 +33,8 @@ export class AnnonceFormComponent implements OnInit {
       bagage: [''],
       fumeur: [false],
       climatisation: [false],
-      sexe: ['Peu importe']
+      sexe: ['Peu importe'],
+      
     });
   }
 

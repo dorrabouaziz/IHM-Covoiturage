@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnnonceService } from '../services/annonce.service';
 import { AnnonceCovoiturage, Passager } from '../modele/annonce';
 import { ConfirmationService,MessageService } from 'primeng/api';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-liste-annonce',
@@ -10,6 +11,9 @@ import { ConfirmationService,MessageService } from 'primeng/api';
   providers: [MessageService, ConfirmationService]
 })
 export class ListeAnnonceComponent  {
+  cities= ['Tunis', 'Sfax', 'Sousse', 'Kairouan', 'Gabès', 'Bizerte', 'Ariana', 'Gafsa', 'Monastir', 'Ben Arous', 'Nabeul', 'Mahdia', 'Kasserine', 'Medenine', 'Jendouba', 'Sidi Bouzid', 'Manouba', 'Tataouine', 'Kef', 'Siliana', 'Zaghouan', 'Kebili', 'Beja', 'Tozeur'
+        
+];
   annonces: AnnonceCovoiturage[] = [];
   searchTerm1: string = '';
   searchTerm2: string = '';
@@ -17,23 +21,25 @@ export class ListeAnnonceComponent  {
   loading: boolean = false;
   searchKeyword: string = '';
   searchDate: string = '';
-  date1!:Date;
+  date1 :any;
   placesDisponibles:any;
   annonceDetails!: AnnonceCovoiturage;
   annonceDialog: boolean = false;
   
   
+  
 
-  constructor(private annonceService: AnnonceService, private messageService: MessageService, private confirmationService: ConfirmationService) { }
+  constructor(private annonceService: AnnonceService, private messageService: MessageService, private confirmationService: ConfirmationService , private router:Router) { }
   
   onSearch(): void {
-    if (this.searchTerm1 && this.searchTerm2) {
+    if (this.searchTerm1 && this.searchTerm2  ) {
       const searchTerm1Lower = this.searchTerm1.toUpperCase();
       const searchTerm2Lower = this.searchTerm2.toUpperCase();
       
   
       this.annonceService.filtrerAnnonces(searchTerm1Lower, searchTerm2Lower)
         .subscribe(annoncesFiltrees => {
+          
           // Filter announcements with nbPlace > 0
           const annoncesWithPlaces = annoncesFiltrees.filter(annonce => annonce.placesDisponibles > 0);
           this.annonces = annoncesWithPlaces;

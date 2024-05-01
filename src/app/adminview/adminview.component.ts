@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AnnonceCovoiturage } from '../modele/annonce';
 import { AnnonceService } from '../services/annonce.service';
+import { map } from 'rxjs';
+import { Table } from 'primeng/table';
 
 @Component({
   selector: 'app-adminview',
@@ -8,6 +10,7 @@ import { AnnonceService } from '../services/annonce.service';
   styleUrls: ['./adminview.component.scss']
 })
 export class AdminviewComponent implements OnInit {
+  @ViewChild('dt') dt: Table | undefined;
 
   annonces: AnnonceCovoiturage[] = [];
   searchTerm1: string = '';
@@ -17,25 +20,21 @@ export class AdminviewComponent implements OnInit {
   searchKeyword: string = '';
   searchDate: string = '';
   date1!: Date;
+  searchKeyword1: string = '';
+
 
   constructor(private annonceService: AnnonceService) { }
 
   ngOnInit(): void {
-    this.loadAnnonces();
-  }
-
-  loadAnnonces(): void {
-    this.loading = true;
-    this.annonceService.recupererAnnonces().subscribe(
-      (annonces: AnnonceCovoiturage[]) => {
-        this.annonces = annonces;
-        this.loading = false;
-      },
-      (error) => {
-        console.error('Erreur lors du chargement des annonces : ', error);
-        this.loading = false;
-      }
-    );
+    this.annonceService.recupererAnnonces()
+      .pipe(
+        map((annonces: AnnonceCovoiturage[]) =>
+          annonces.filter((annonce) => annonce.placesDisponibles> 0)
+        )
+      )
+      .subscribe((filteredAnnonces: AnnonceCovoiturage[]) => {
+        this.annonces = filteredAnnonces;
+      });
   }
 
   supprimerAnnonce(id: string): void {
@@ -57,6 +56,7 @@ export class AdminviewComponent implements OnInit {
   annonceDetails!: AnnonceCovoiturage;
   annonceDialog: boolean = false;
 
+ 
   loadAnnonceDetails(id: string) {
     const idNumber = parseInt(id); // Convert the id from string to number
     this.annonceService.recupererAnnonceParId(idNumber).subscribe(
@@ -70,8 +70,10 @@ export class AdminviewComponent implements OnInit {
       }
     );
   }
-
   hideAnnonceDialog() {
     this.annonceDialog = false;
   }
+
+  
 }
+

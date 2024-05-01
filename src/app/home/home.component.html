@@ -1,6 +1,7 @@
-<img src="./assets/SLIDE.jpg" style="width: 100%; height: auto; object-fit: cover; z-index: 1; margin-top: 50px;">
+<img src="./assets/SLIDE.jpg" style="width: 100%; height: auto; object-fit: cover; z-index: 1; margin-top: 10px;">
 
 <div class="card-container flex justify-content-center">
+  <ng-container *ngIf="annonces">
   <ng-container *ngFor="let annonce of annonces.slice(0, 4)">
     <p-card
       header="{{ annonce.depart }} -- {{ annonce.destination }}"
@@ -15,8 +16,26 @@
       <p>{{annonce.placesDisponibles}} places disponibles</p>
       <ng-template pTemplate="footer">
         <p-button label="Réserver" icon="pi pi-book" styleClass="p-button-success" routerLink="/login"></p-button>
-        <p-button label="Détails" icon="pi pi-plus" [style]="{ 'margin-left': '.5em' }"></p-button>
+        <p-button label="Détails" icon="pi pi-plus" [style]="{ 'margin-left': '.5em' }" (onClick)="loadAnnonceDetails(annonce.id)"></p-button>
       </ng-template>
     </p-card>
   </ng-container>
+</ng-container>
 </div>
+<p-dialog [(visible)]="annonceDialog"  header="Détails de l'annonce" [modal]="true" [style]="{ width: '60rem' }" (onHide)="hideAnnonceDialog()">
+  <div *ngIf="annonceDetails" class="dialog-content">
+    <h1>{{ annonceDetails.depart }} - {{ annonceDetails.destination }}</h1>
+    <p>Heure de départ: {{ annonceDetails.heureDepart }}</p>
+    <h2>Conducteur</h2>
+    <p>Nom: {{ annonceDetails.conducteur.nom }}</p>
+    <p>Téléphone: {{ annonceDetails.conducteur.telephone }}</p>
+    <p>Véhicule: {{ annonceDetails.conducteur.vehicule }}</p>
+ 
+    <h2>Options</h2>
+    <p>Climatisation: {{ annonceDetails.conducteur.climatisation ? 'Oui' : 'Non' }}</p>
+    <p>Bagage: {{ annonceDetails.conducteur.bagage ? 'Autorisé' : 'Non autorisé'}}</p>
+    <p>Fumeur: {{ annonceDetails.conducteur.fumeur ? 'Oui' : 'Non' }}</p>
+    <p>Sexe: {{ annonceDetails.conducteur.sexe }}</p>
+    
+  </div>
+</p-dialog>
