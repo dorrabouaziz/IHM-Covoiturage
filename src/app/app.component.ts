@@ -62,6 +62,7 @@ export class AppComponent implements OnInit {
         { label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: '/home' },
         { label: 'Recherche', icon: 'pi pi-fw pi-search', routerLink: '/liste-annonce' },
         { label: 'Annonce', icon: 'pi pi-fw pi-table', routerLink: '/adminview' },
+        { label: '‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎' },
         { label: 'Connexion', icon: 'pi pi-fw pi-users', routerLink: '/login' },
         { label: 'Inscription', icon: 'pi pi-fw pi-user-plus', routerLink: '/register' }
       ];
@@ -72,7 +73,7 @@ export class AppComponent implements OnInit {
         { label: 'Recherche', icon: 'pi pi-fw pi-search', routerLink: '/annonces-cov' },
         { label: 'Annonces', icon: 'pi pi-fw pi-table', routerLink: '/annonces-res' },
         { label: 'Ajouter annonce', icon: 'pi pi-fw pi-plus', routerLink: '/create' },
-        { label: 'Mes annonces', icon: 'pi pi-fw pi-table', routerLink: '/annonces' },
+        { label: 'Mes annonces', icon: 'pi pi-fw pi-car', routerLink: '/annonces' },
         { label: '‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎  ' },
         { label: `Bonjour, ${this.user.fullName}`, icon: 'pi pi-fw pi-user' },
         { label: 'Logout', icon: 'pi pi-fw pi-sign-out', command: () => this.logOut() }

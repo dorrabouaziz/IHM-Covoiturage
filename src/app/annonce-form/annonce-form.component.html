@@ -1,23 +1,27 @@
 <router-outlet></router-outlet>
-<h1 *ngIf="!annonceId">Créer une nouvelle annonce de covoiturage</h1>
-<h1 *ngIf="annonceId">Modifier annonce de covoiturage</h1>
+<div class="background">
+  <div class="back">
 <form [formGroup]="formAnnonce" (ngSubmit)="saveAnnonce()">
+  <h1 *ngIf="!annonceId">Créer une nouvelle annonce de covoiturage</h1>
+  <h1 *ngIf="annonceId">Modifier annonce de covoiturage</h1>
   <div class="form-row">
     <mat-form-field class="example-full-width">
       <mat-label>Départ:</mat-label>
-      <select matNativeControl id="searchTerm1" class="large-dropdown custom-dropdown" formControlName="depart" required>
-          <option value="" disabled selected>Départ</option>
-          <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+      <select matNativeControl id="searchTerm1" class="large-dropdown custom-dropdown" formControlName="depart"
+        required>
+        <option value="" disabled selected>Départ</option>
+        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
       </select>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Destination:</mat-label>
-      <select matNativeControl id="searchTerm2" class="large-dropdown custom-dropdown" formControlName="destination" required>
-          <option value="" disabled selected>Destination</option>
-          <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+      <select matNativeControl id="searchTerm2" class="large-dropdown custom-dropdown" formControlName="destination"
+        required>
+        <option value="" disabled selected>Destination</option>
+        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
       </select>
     </mat-form-field>
-</div>
+  </div>
   <div class="form-row">
     <mat-form-field class="example-full-width">
       <mat-label>Date de départ:</mat-label>
@@ -85,13 +89,15 @@
       <mat-radio-button value="Peu importe">Peu importe</mat-radio-button>
     </mat-radio-group>
   </div>
- 
-  <button type="submit" class="bouton-vert" >
+
+  <button type="submit" class="bouton-vert">
     Enregistrer
     <i class="pi pi-check"></i>
   </button>
   <button type="submit" class="bouton-rouge" routerLink="/liste-annonce">
     Annuler
-     <i class="pi pi-times"></i>
-   </button>
+    <i class="pi pi-times"></i>
+  </button>
 </form>
+</div>
+</div>

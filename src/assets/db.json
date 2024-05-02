@@ -32,7 +32,7 @@
       "destination": "TUNIS",
       "date": "2024-04-12T23:00:00.000Z",
       "heureDepart": "20:00",
-      "placesDisponibles": 1,
+      "placesDisponibles": 2,
       "conducteur": {
         "nom": "AHMED",
         "telephone": "26091862",
@@ -144,7 +144,7 @@
       "destination": "TUNIS",
       "date": "2024-04-12T23:00:00.000Z",
       "heureDepart": "03:00",
-      "placesDisponibles": 2,
+      "placesDisponibles": 1,
       "conducteur": {
         "nom": "AHMED",
         "telephone": "26091862",

@@ -23,7 +23,12 @@ export class RegisterComponent {
   }, {
     validators: passwordMatchValidator
   })
-
+  cities = [
+    {label:'Tunis', value:'Tunis'},
+    {label:'Sfax', value:'Sfax'},
+    {label:'Sousse', value:'Sousse'},
+    // Ajoutez plus de villes ici
+  ];
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,

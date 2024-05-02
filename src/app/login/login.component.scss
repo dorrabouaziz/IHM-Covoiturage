@@ -1,12 +1,44 @@
+.register-link {
+  color: white;
+}
+.input-field {
+  color: white;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.input-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+.input-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+.input-field::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+.card-header {
+  color: white; /* Pour rendre le texte en blanc */
+  text-align: center; /* Pour centrer le texte */
+}
 .login-container {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   height: 80vh;
   margin-top: 20px;
   margin-left: 20px;
+}
+.card {
+  background-color: rgba(140, 140, 140, 0.5) !important; /* Changez la dernière valeur pour ajuster la transparence */
+}
 
-
+.input-field {
+  background-color: rgba(154, 154, 154, 0.7) !important; /* Changez la dernière valeur pour ajuster la transparence */
 }
 
 .login-form {
@@ -65,7 +97,7 @@ label {
   text-decoration: underline;
 }
 .background {
- background-image: url('/assets/log.jpg'); /* Remplacez le chemin par votre image d'arrière-plan */
+ background-image: url('/assets/login3.jpg'); /* Remplacez le chemin par votre image d'arrière-plan */
   background-size: cover;
   background-position: center;
   position: fixed;

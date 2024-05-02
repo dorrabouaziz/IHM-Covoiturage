@@ -1,5 +1,5 @@
 h1 {
-    padding-top: 20px;
+    
     display: flex;
     justify-content: center;
   }
@@ -62,12 +62,12 @@ h1 {
   
   
   form {
-    background-color:  #dcf3f6cf;
+    background-color:  rgba(255, 255, 255, 0.463);
     padding: 30px; /* Ajoute de l'espace à l'intérieur de la bordure pour améliorer l'apparence */
     width: 800px; /* Vous pouvez ajuster la largeur du formulaire selon vos besoins */
     margin: 0 auto; /* Centre le formulaire horizontalement sur la page */
     border-radius: 15px; /* Ajoute des coins arrondis aux bords du formulaire */
-    height: 640px;
+    height: 690px;
   }
   
   .example-container mat-form-field + mat-form-field {
@@ -95,6 +95,26 @@ h1 {
     align-items: flex-start;
   }
   label{
-    color: rgb(118, 106, 106);
+    color: black;
     font-size: larger;
+    ;
+  }
+  .back{
+    margin-top: 20px;
+  }
+  .background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url('/assets/annonce2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  ::ng-deep .p-card {
+    background-color: rgba(140, 140, 140, 0.5) !important; /* Change this value to adjust the transparency */
+  }
+  ::ng-deep .p-card .w-full {
+    background-color: rgba(154, 154, 154, 0.7) !important; /* Change this value to adjust the transparency */
   }

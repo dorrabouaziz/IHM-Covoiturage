@@ -1,17 +1,18 @@
 <body>
-  <div class="background">
-      <form [formGroup]="registerForm" (ngSubmit)="submitDetails()" class="form-wrapper">
-        <p-card header="Inscription" [style]="{ width: '600px', height:'705px'}">
-          <div class="field">
-      <label for="fullName">Nom et prénom</label>
-      <input
-        type="text"
-        pInputText
-        formControlName="fullName"
-        class="w-full"
-        name="fullName"
-        placeholder="Entrer votre nom et prénom"
-      />
+<div class="background">
+  <form [formGroup]="registerForm" (ngSubmit)="submitDetails()" class="form-wrapper">
+    <p-card [style]="{ width: '600px', height:'655px'}">
+      <div class="header centered-text"> Inscription  </div>
+      <br>
+      <div class="field">
+        <input
+          type="text"
+          pInputText
+          formControlName="fullName"
+          class="w-full"
+          name="fullName"
+          placeholder="Nom et prénom"
+        />
       <small
         *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
         class="block p-error"
@@ -23,20 +24,18 @@
     <!-- ...existing form fields... -->
 
     <div class="field">
-      <label for="city">Ville</label>
       <input
         type="text"
         pInputText
         formControlName="city"
         class="w-full"
         name="city"
-        placeholder="Entrer votre ville"
+        placeholder="Ville"
       />
       <!-- Add validation messages if needed -->
     </div>
 
     <div class="field">
-      <label for="phoneNumber" >Numéro de téléphone</label>
       <input
         type="text"
         pInputText
@@ -50,7 +49,6 @@
 
     <!-- ...existing form fields... -->
     <div class="field">
-      <label for="email">Email</label>
       <input
         type="text"
         pInputText
@@ -68,7 +66,7 @@
       </small>
     </div>
     <div class="field">
-      <label for="password">Mot de passe</label>
+
       <input
         type="password"
         pInputText
@@ -85,7 +83,7 @@
       </small>
     </div>
     <div class="field">
-      <label for="confirmPassword">Confirmer mot de passe</label>
+
       <input
         type="password"
         pInputText
@@ -111,14 +109,15 @@
         Password should match
       </small>
     </div>
-    <p-button
-      label="Valider"
-      styleClass="w-full"
-      [disabled]="registerForm.invalid"
-      type="submit"
-      
-    ></p-button>
-    <div class="register-link">Déja un membre? <a routerLink="/login">Se connecter</a></div>
+      <div class="button-container">
+        <p-button
+          label="Valider"
+          class="submit-button w-full"
+          [disabled]="registerForm.invalid"
+          type="submit"
+        ></p-button>
+      </div>
+      <div class="register-link white-text">Déja un membre? <a routerLink="/login">Se connecter</a></div>
   </p-card>
 </form>
 </div>
