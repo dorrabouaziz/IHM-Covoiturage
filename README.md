@@ -1,27 +1,56 @@
-# Covoiturages
+# Application de Covoiturage
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+Ce projet est une application de covoiturage développée avec Angular pour le frontend et json-server pour le backend.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Cloner le repository :
 
-## Code scaffolding
+```bash
+git clone https://github.com/dorrabouaziz/IHM-Covoiturage.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Installer les dépendances :
+  
+  ```bash
+npm install
+```
 
-## Build
+### Backend
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Démarrer le serveur json-server :
+  
+  ```bash
+npm run json-server
+```
 
-## Running unit tests
+Le serveur backend sera accessible à l'adresse http://localhost:3000
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Frontend
 
-## Running end-to-end tests
+1. Démarrer l'application Angular :
+  
+  ```bash
+ng serve
+```
+L'application frontend sera accessible à l'adresse http://localhost:4200
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Fonctionnalités
 
-## Further help
+- Inscription et connexion des utilisateurs.
+- Affichage des annonces de covoiturage.
+- Recherche d'annonces par ville de départ et destination.
+- Création, modification et suppression d'annonces par les utilisateurs connectés.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Technologies Utilisées
+
+- Angular
+- json-server
+
+## Contributeurs
+
+- Dorra Bouaziz
+- Racem Aribi
+- Fares Masmoudi
+- Ahmed habaib
+
